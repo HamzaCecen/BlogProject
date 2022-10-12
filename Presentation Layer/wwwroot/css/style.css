@@ -1,0 +1,20 @@
+.navbar {
+    margin: 0 auto 2.5rem auto;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.new-blog {
+    padding: 1.5rem 2.5rem;
+}
+
+.newblog-div {
+    margin-left: 35%;
+}

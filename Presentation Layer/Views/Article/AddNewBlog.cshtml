@@ -1,0 +1,105 @@
+﻿@model NewArticleDto;
+@{
+    var name = ViewBag.Name as string;
+}
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add New Blog</title>
+        <link rel="icon" href="~/images/favicon (2).ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <style>
+        body {
+            background-color: #b3cde0;
+        }
+        .new-blog {
+            padding: 1.5rem 2.5rem;
+        }
+
+        .newblog-div {
+            text-align: center;
+        }
+
+        .text-blog, .header-box {
+            margin: auto;
+            width: 60%;
+        }
+
+        .option, button{
+            width: 8.5rem;
+            height: 3rem;
+            text-align: justify;
+        }
+
+        .header-box {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-label{
+            margin-top: 13px;
+        }
+
+        .pen{
+            margin-top: 4.5rem;
+        }
+    </style>
+    </head>
+    <body>
+
+        <!-- Navbar Section -->
+        @Html.Partial("~/Views/Shared/_navbar.cshtml")
+
+
+    
+    <div class="text-blog pen">
+        <form method="post" asp-action="Deneme" asp-controller="Article" enctype="multipart/form-data"> 
+        <input class="header-box form-control" type="text" placeholder="Blog's Header" id="Header" asp-for="Header">
+        <textarea class="form-control" data-val="true" cols="136" rows="16" placeholder="Blog's Content" id=" exampleFormControlTextarea1" asp-for="Content"></textarea>
+        <div>
+            <label for="formFile" class="form-label">Optional to choose blog image</label>
+            <div class="mb-3">
+
+                <input class="form-control" type="file" id="formFile" id="Picture" asp-for="Picture">
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                        <select class="form-select option form-control" aria-label="Default select example" id="FontSize" asp-for="FontSize">
+                        <option selected>Font Size</option>
+                        <option value="16px">16px</option>
+                        <option value="20px">20px</option>
+                        <option value="25px">25px</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                        <select class="form-select option form-control" aria-label="Default select example" id="FontFamily" asp-for="FontFamily">
+                        <option selected>Font Family</option>
+                            <option value="'Montserrat', sans-serif">Montserrat</option>
+                            <option value="'Open Sans', sans-serif">Open Sans</option>
+                            <option value="'Poppins', sans-serif">Poppins</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                        <select class="form-select option form-control" aria-label="Default select example" id="FontColor" asp-for="FontColor">
+                        <option selected>Font Color</option>
+                            <option value="#191919">Black</option>
+                            <option value="#1746A2">Blue</option>
+                            <option value="#B73E3E">Red</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                        <button type="submit" class="btn btn-success">Save Blog</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+  
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    </body>
+    </html>
